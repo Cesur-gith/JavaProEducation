@@ -1,0 +1,40 @@
+package a_day12_stringmanipumation;
+
+import java.util.Scanner;
+
+public class C2_StringManipulation02 {
+
+	public static void main(String[] args) {
+		/*
+		 * Soru 7) Kullanicidan ismini, soyismini ve kredi karti bilgisini isteyin ve asagidaki gibi yazdirin
+ 			isim-soyisim : M***** B*******
+ 			kart no : **** **** **** 1234
+ 			*/
+		
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Lutfen bir adinizi giriniz");
+		String isim=scan.nextLine();
+		
+		System.out.println("Lutfen bir soyisim giriniz");
+		String soyisim=scan.nextLine();
+		
+		System.out.println("Lutfen kart numaranizi giriniz");
+		String kkNO=scan.nextLine();
+		
+		String isimDuzenlenmis = isim.substring(0,1).toUpperCase() +
+								isim.substring(1).replaceAll("\\w", "*");
+		
+		String soyisimDuzenlenmis = soyisim.substring(0,1).toUpperCase() +
+									soyisim.substring(1).replaceAll("\\S", "*");	
+		
+		String kkNoDuzenlenmis = "**** **** **** " + kkNO.substring(15);
+		
+
+		System.out.println("isim-soyisim : " + isimDuzenlenmis+" " + soyisimDuzenlenmis + "\nkart no : " + kkNoDuzenlenmis);
+		
+		scan.close();
+	}
+
+}
